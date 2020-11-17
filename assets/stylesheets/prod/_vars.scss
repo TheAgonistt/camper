@@ -1,0 +1,165 @@
+// ----------------------------------------
+// ----------------------------------------
+// Colors BEGIN
+
+// monochrome
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #D0D0CE !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+// colors
+$blue: 			#00a0e3 !default;
+$purple:		#291d89 !default;
+$purple-light: 	#4e67e8 !default;
+$pink:    		#d63384 !default;
+$red:    		#d50834 !default;
+$yellow:  		#D2F200 !default;
+$green:         #072B31 !default;
+
+// theme
+$primary:       $green !default;
+$secondary:     $yellow !default;
+$success:       #48C774 !default;
+$info:          #3298DC !default;
+$warning:       #FFDD57 !default;
+$error:			#F14668 !default;
+$mono-back:		$gray-100 !default;
+$mono-front:	$gray-900 !default;
+
+// Set a specific jump point for requesting color jumps
+$theme-color-interval: 8% !default;
+
+// The contrast ratio to reach against white, to determine if color changes from "light" to "dark". Acceptable values for WCAG 2.0 are 3, 4.5 and 7.
+// See https://www.w3.org/TR/WCAG20/#visual-audio-contrast-contrast
+$min-contrast-ratio:   3 !default;
+
+// Customize the light and dark text colors for use in our color contrast function.
+$color-contrast-dark:      $gray-900 !default;
+$color-contrast-light:     $white !default;
+
+// ************************************* //
+
+// primary color
+$primary-light: lighten($primary, 8%);
+$primary-dark: darken($primary, 8%);
+
+// secondary color
+$secondary-light: lighten($secondary, 8%); 
+$secondary-dark: darken($secondary, 8%); 
+
+// gray
+$grayDarkest: lighten($black, 3%);
+$grayDarker: lighten($black, 8%);
+$grayDark: lighten($black, 20%);
+$gray: lighten($black, 50%);
+$grayLight: lighten($black, 70%);
+$grayLighter: lighten($black, 92%);
+$grayLightest: lighten($black, 97%);
+
+// specific color
+$body-text-color: $grayDarkest;
+$body-bg-color: $primary;
+
+// Colors END
+// ----------------------------------------
+// ----------------------------------------
+
+
+// ----------------------------------------
+// ----------------------------------------
+// Grid / responsive BEGIN
+
+// settings
+$grid-columns: 12;
+$grid-gutter-width: 1rem;
+
+// breakpoints
+$scr-xxs: 20em;
+$scr-xs: 30em;
+$scr-sm: 45em;
+$scr-md: 62em;
+$scr-lg: 75em;
+$scr-xlg: 90em;
+// $scr-xxlg: 104em;
+// ----------------------------------------
+// ----------------------------------------
+
+
+// ----------------------------------------
+// ----------------------------------------
+// Typography BEGIN
+
+// settings
+$font-base: 16px;
+$font-base-unit: 16;
+$font-line-height: 1.65;
+$heading-line-height: 1.05;
+
+// family
+$font-main: 'Manrope', sans-serif;
+$ff-primary: $font-main;
+
+$font-heading: 'Manrope', sans-serif;
+$ff-secondary: $font-heading;
+
+// weight 
+$fw-extra-light: 200;
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semi-bold: 600;
+$fw-bold: 700;
+$fw-black: 900;
+
+// heading
+$ff-heading: $ff-secondary;
+$ff-heading-weight: $fw-regular;
+$ff-heading-color: $grayDarkest;
+$h1: 4rem;
+$h2: 3.5rem;
+$h3: 3rem;
+$h4: 2.5rem;
+$h5: 2rem;
+$h6: 1.5rem;
+// Typography END
+// ----------------------------------------
+// ----------------------------------------
+
+// ----------------------------------------
+// ----------------------------------------
+// Spacing BEGIN
+$spacing-initial: 1.1rem;
+$spacing-ratio: 1.3;
+
+// margin
+$margin-initial: 0.8rem;
+$margin-ratio: 1.1;
+
+// padding
+$padding-initial: 0.8rem;
+$padding-ratio: 1.1;
+// Spacing END
+// ----------------------------------------
+// ----------------------------------------
+
+
+// ----------------------------------------
+// ----------------------------------------
+// Transition BEGIN
+$stand-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$decel-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+$accel-curve: cubic-bezier(0.4, 0.0, 1, 1);
+$sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+
+$ease-in: cubic-bezier(0.430, 0.045, 0.100, 0.950);
+// Transition END
+// ----------------------------------------
+// ----------------------------------------

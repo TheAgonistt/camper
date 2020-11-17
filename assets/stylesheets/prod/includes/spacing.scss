@@ -1,0 +1,103 @@
+:root {
+	--spacing: #{$spacing-initial};
+	--spacing-ratio: #{$spacing-ratio};
+	--margin: #{$margin-initial};
+	--margin-ratio: #{$margin-ratio};
+	--padding: #{$padding-initial};
+	--padding-ratio: #{$padding-ratio};
+
+	$i: 1;
+	@each $size in $ListSize {
+		--spacing-#{$size}: calc( var(--spacing) * (var(--spacing-ratio) * #{$i}) );
+		--margin-#{$size}: calc( var(--margin) * (var(--margin-ratio) * #{$i}) );
+		--padding-#{$size}: calc( var(--padding) * (var(--padding-ratio) * #{$i}) );
+		$i: $i + 1;
+	}
+}
+
+
+// Spacing
+@each $size in $ListSize {
+	.Spacing--#{$size} {
+		padding-top: variable('spacing-#{$size}');
+		padding-bottom: variable('spacing-#{$size}');
+	}
+
+	.Spacing--#{$size}-noBottom {
+		padding-top: variable('spacing-#{$size}');
+		padding-bottom: 0!important;
+	}
+
+	.Spacing--#{$size}-noTop {
+		padding-bottom: variable('spacing-#{$size}');
+		padding-top: 0!important;
+	}
+}
+
+@each $breakpoint, $value in $breakpoints {
+	@if $value > 45 {
+		@include mediaq('>#{$breakpoint}') {
+			@each $size in $ListSize {
+				.Spacing--#{$size}--#{$breakpoint} {
+					padding-top: variable('spacing-#{$size}');
+					padding-bottom: variable('spacing-#{$size}');
+				}
+			}
+		}
+	}
+}
+
+// Margin / NoMargin
+.NoMargin {
+	margin: 0;
+}
+
+@each $direction in $ListDirection {
+	.NoMargin--#{$direction} {
+		margin-#{$direction}: 0;
+	}
+
+	@each $size in $ListSize {
+		.Margin--#{$direction}--#{$size} {
+			margin-#{$direction}: variable('margin-#{$size}');
+		}
+	}
+}
+
+@each $breakpoint, $value in $breakpoints {
+	@if $value > 45 {
+		@include mediaq('>#{$breakpoint}') {
+			@each $size in $ListSize {
+				.Spacing--#{$size}--#{$breakpoint} {
+					padding-top: variable('spacing-#{$size}');
+					padding-bottom: variable('spacing-#{$size}');
+				}
+			}
+
+			.NoMargin--#{$breakpoint} {
+				margin: 0;
+			}
+		}
+	}
+}
+
+// Padding / NoPadding
+.NoPadding {
+	padding: 0;
+}
+
+@each $direction in $ListDirection {
+	.NoPadding--#{$direction} {
+		padding-#{$direction}: 0;
+	}
+
+	@each $size in $ListSize {
+		.Padding--#{$size} {
+			padding-#{$direction}: variable('padding-#{$size}');
+		}
+
+		.Padding--#{$direction}--#{$size} {
+			padding-#{$direction}: variable('padding-#{$size}');
+		}
+	}
+}

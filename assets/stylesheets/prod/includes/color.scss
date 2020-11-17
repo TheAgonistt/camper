@@ -1,0 +1,25 @@
+// Block
+@each $name, $value in $theme-colors {
+	.BlockColor--#{$name} {
+		background: variable('#{$name}');
+	}
+}
+
+@each $name, $value in $theme-monochromes {
+	.BlockColor--#{$name} {
+		background: variable('#{$name}');
+	}
+}
+
+// Text
+@each $name, $value, $code in $theme-colors {
+	.TextColor--#{$name} {
+		color: variable('#{$name}');
+	}
+}
+
+@each $name, $value in $theme-monochromes {
+	.TextColor--#{$name} {
+		color: variable('#{$name}');
+	}
+}

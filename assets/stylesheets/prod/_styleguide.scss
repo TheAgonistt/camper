@@ -1,0 +1,593 @@
+/*
+* pour un projet avec vue-nuxt-base, changer les imports pour:
+*
+* @import '~/assets/stylesheets/prod/_vars.scss';
+* @import '~/assets/stylesheets/prod/_config.scss';
+* @import '~/assets/stylesheets/lib/mediaq/_mediaq.scss';
+* @import '~/assets/stylesheets/lib/mixin/mixin.scss';
+*
+*/
+
+@import '~/assets/stylesheets/prod/_vars';
+@import '~/assets/stylesheets/prod/_config';
+@import '~/assets/stylesheets/prod/includes/mixin.scss';
+
+:root {
+	/* Colors */
+	@each $name, $value in $theme-colors {
+		--#{$name}: #{$value};
+	}
+
+	@each $name, $value in $theme-monochromes {
+		--#{$name}: #{$value};
+	}
+
+	--body-text-color: #{$body-text-color};
+	--body-bg-color: #{$body-bg-color};
+	--success: #{$success};
+	--warning: #{$warning};
+	--error: #{$error};
+	--info: #{$info};
+
+	/* Typography */
+	--font-base: #{$font-base};
+	--font-line-height: #{$font-line-height};
+	--heading-line-height: #{$heading-line-height};
+	--font-primary: #{$ff-primary};
+	--font-secondary: #{$ff-secondary};
+	--font-extra-light: #{$fw-extra-light};
+	--font-light: #{$fw-light};
+	--font-regular: #{$fw-regular};
+	--font-medium: #{$fw-medium};
+	--font-semi-bold: #{$fw-semi-bold};
+	--font-bold: #{$fw-bold};
+	--font-black: #{$fw-black};
+	--font-heading: #{$ff-heading};
+	--font-heading-weight: #{$ff-heading-weight};
+	--font-heading-color: #{$ff-heading-color};
+	--h1: #{$h1};
+	--h2: #{$h2};
+	--h3: #{$h3};
+	--h4: #{$h4};
+	--h5: #{$h5};
+	--h6: #{$h6};
+
+	// @each $breakpoint, $value in $breakpoints {
+	// 	@if $value > 45 {
+	// 		@include mediaq('>#{$value}') {
+	// 			--breakpoint: #{$value};
+	// 			--container: calc(var(--breakpoint) - (var(--grid-gutter-width) / 2));
+	// 		}
+	// 	}
+	// }
+}
+
+// html
+html {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: variable('body-bg-color');
+	font-size: variable('font-base');
+	font-weight: variable('font-regular');
+	line-height: variable('font-line-height');
+	font-family: variable('font-primary');
+	color: variable('body-text-color');
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	-ms-overflow-style: scrollbar;
+	-webkit-tap-highlight-color: rgba(variable('primary'), 0.15);
+}
+
+// heading
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: variable('font-heading');
+	line-height: variable('heading-line-height');
+	font-weight: variable('font-heading-weight'); 
+	color: variable('font-heading-color');
+}
+
+// ----------------------------------------
+// Paragraphe
+p, blockquote {
+	font-size: variable('font-base');
+	margin-bottom: 1.3em;
+}
+
+// ----------------------------------------
+// Links
+a {
+	text-decoration: none; 
+	font-weight: variable('semi-bold'); 
+	color: variable('primary'); 
+	&:hover, &:active, &:focus{
+		color: variable('secondary');
+		text-decoration: none;
+	}
+}
+
+// ----------------------------------------
+// Unordered (ul) and ordered (ol) lists
+ul, ol {
+	&[class] {
+		list-style: none;
+		padding: 0;
+	}
+
+	// Style if no class is applied 
+	// (Usefull for styling ul and ol in a wysiwyg)
+	&:not([class]) {
+		padding-left: 1.5rem;
+	}
+
+	&.bordered {
+		li:not(:last-child) {
+			border-bottom: 1px solid variable('grayDark');
+		}
+	}
+
+	li { 
+		padding-bottom: 0.4em;
+		margin-bottom: 0.4em;
+	}
+}
+
+// Editable
+.Editable{
+	> * {
+		&:first-child {
+			margin-top: 0!important;
+		}
+		&:last-child {
+			margin-bottom: 0!important;
+		}
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		margin-top: 1em;
+		margin-bottom: 0.5em;
+	}
+
+	h1, .h1 {
+		font-size: calc(var(--h1) / 1.6);
+
+		@include mediaq('>MD') {
+			font-size: variable('h1');
+		}
+	}
+
+	h2, .h2 {
+		font-size: calc(var(--h2) / 1.7);
+
+		@include mediaq('>MD') {
+			font-size: variable('h2');
+		}
+	}
+
+	h3, .h3 {
+		font-size: calc(var(--h3) / 1.7);
+
+		@include mediaq('>MD') {
+			font-size: variable('h3');
+		}
+	}
+
+	h4, .h4{
+		font-size: calc(var(--h4) / 1.7);
+
+		@include mediaq('>MD') {
+			font-size: variable('h4');
+		}
+	}
+
+	h5, .h5{
+		font-size: calc(var(--h5) / 1.7);
+
+		@include mediaq('>MD') {
+			font-size: variable('h5');
+		}
+	}
+
+	h6, .h6{
+		font-size: calc(var(--h6) / 1.7);
+
+		@include mediaq('>MD') {
+			font-size: variable('h6');
+		}
+	}
+
+	a {
+		text-decoration: underline;
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+// ----------------------------------------
+// HR
+hr {
+	border: none;
+	height: 1px;
+	background: variable('grayDark');
+	margin: 2rem 0;
+	&.-medium {
+		margin: 3rem 0;
+	}
+	&.-large {
+		margin: 4rem 0;
+	}
+	&.-thin {
+		margin: 1rem 0;
+		background: variable('grayDark')
+	}
+} 
+		 
+// ----------------------------------------
+// ALERT MESSAGES
+.Alert {
+	margin-bottom: 20px;
+	padding: 15px;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	text-align: center;
+
+	// has-success
+	&.has-success {
+		background: variable('success');
+		color: darken($success, 55%);
+	}
+
+	// has-warning
+	&.has-warning {
+		background: variable('warning');
+		color: darken($warning, 55%);
+	}
+
+	// has-error
+	&.has-error {
+		background: variable('error');
+		color: darken($error, 55%);
+	}
+}
+
+.has-error, .has-error + label {  
+	color: darken($error, 35%); 
+}
+
+.has-warning, .has-warning + label {  
+	color: darken($warning, 40%); 
+}
+
+.has-success, .has-success + label{
+	color: darken($success, 35%); 
+}
+ 
+		 
+// ----------------------------------------
+// FORMS
+label, .Label {
+	display: block;
+	margin-bottom: .25rem;
+}
+
+.FormElement {
+	position: relative;
+	margin-bottom: 25px;
+	@include Placeholder(variable('font-base'), variable('font-base'), variable('gray'));
+
+	// Boxed
+	&.FormElement-boxed{
+		background: variable('grayDark');
+	}
+
+	// Bordered
+	&.FormElement-bordered{
+		outline: 1px solid variable('grayDark')!important; 
+	}
+
+	// Radio and checkbox
+	&.FormElement_radio, 
+	&.FormElement_checkbox{
+		display: inline-block;
+
+		&.FormElement-boxed {
+			padding: 0.8em 0.8em 0.7em;
+		}
+
+		input{
+			display: none!important;
+		}
+
+		label{
+			position: relative;
+			margin-bottom: 0;
+			padding-left: 1.8em;
+			&:before{
+				content: '';
+				position: absolute;
+				top: 0.08em;
+				left: 0;
+				width: 1.1em;
+				height: 1.1em; 
+				background: variable('white');
+				border: 1px solid variable('grayDark');
+				border-radius: 2px;
+			} 
+		}
+
+		&[class*="radio"]{
+			label{
+				&:before{
+					border-radius: 40px;
+				}
+			}
+		}
+
+		// Checked state 
+		:checked + label{ 
+			&:before{
+				background: variable('primary');
+				border-color: variable('primary');
+			}
+		}
+		
+		// Spacing if more than one child in same line
+		// All siblings following the first one will be spaced accordingly
+		// Note : must be placed in a direct parent to work (div, p, span, whatever)
+		&:first-child ~ & {  
+			margin-left: 0.8em; 
+		}
+	}
+
+	// Inputs
+	input:not([type="radio"]),
+	input:not([type="checkbox"]){ 
+		display: block;
+		width: 100%;
+		padding: 0.8rem;
+		background: none;
+		border: none; 
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		appearance: none;
+	}
+
+	// File upload
+	&.FormElement_upload {
+		width: 100%;
+
+		input {
+			position: absolute;
+			height: .1px;
+			width: .1px;
+			overflow: hidden;
+			opacity: .01;
+			z-index: -99999;
+		}
+
+		label {
+			width: 100%;
+			margin: 0!important;
+			padding: 0.8rem;
+			background: none;
+			border: none;
+		}
+	}
+
+	// Submit
+	&.FormElement_submit {
+		[type="submit"] {
+			// when disabled (two class to keep backward compatibility with older Core)
+			&.disabled, &.is-disabled {
+				pointer-events: none;
+				opacity: .45;
+			}	
+		}
+
+		span {
+			position: absolute;
+			width: 0;
+			height: 0;
+			opacity: 0;
+			visibility: hidden;
+			z-index: -9999;
+		}
+	}
+
+	// Select
+	&.FormElement_select {
+		select {
+			font-size: variable('font-base');
+			background: transparent;
+			width: 100%;
+			height: 47px;
+			padding: 0 1em;
+			border:0;
+			border-radius: 0;
+			-moz-appearance: none;
+			-webkit-appearance: none;
+			appearance: none;
+			&::-ms-expand {
+				display: none;
+			}
+		}
+
+		&[class*="Icon"] {
+			&:before{
+				pointer-events: none;
+			}
+		}
+	}
+
+	// Textarea
+	textarea {
+		font-size: variable('font-base');
+		background: none;
+		width: 100%;
+		max-width: 100%;
+		height: auto;
+		min-height: 100px;
+		padding: 0.8rem;
+		border: none;
+	}
+
+	// HR visual reset
+	hr {
+		margin: 0;
+		width: 100%;
+		background: variable('grayDark')
+	}
+
+	// Colored line at input focus
+	input:focus ~ .line{
+		width: 100%;
+	}
+
+	.line { 
+		display: inline-block;
+		top: calc(100% - 1px);
+		z-index: 1000;
+		left: 0;
+		position: absolute;
+		width: 0%;
+		height: 1px;
+		background: variable('primary');
+		transition: all $ease-in .3s;
+	}
+
+	// when has an alert
+	&.has-error, &.has-success, &.has-warning {
+		margin-bottom: 10px;
+
+		+ label {
+			text-align: center;
+			margin-bottom: 25px;
+		}
+	}
+}
+
+.m-FormElement {
+	@include Placeholder(14px, 1, rgba($gray-300, .5));
+
+	input {
+		@include make-input();
+	}
+
+	&--bordered {
+		@include Placeholder(14px, 1, rgba($gray-300, .5));
+		border: 1px solid #0E4F59;
+
+		input {
+			@include make-input();
+		}
+	}
+
+	&__submit {
+		button {
+			padding: 0;
+			width: 140px;
+			height: 50px;
+			background: lighten($primary, 15%);
+			border: none;
+			@include rem(14);
+			line-height: 1.3;
+			font-weight: variable('font-semi-bold');
+			text-transform: uppercase;
+		}
+	}
+}
+
+// ----------------------------------------
+// Table
+table {
+	width: 100%;
+	font-weight: variable('semi-bold');
+	margin-bottom: 30px;
+
+	th {
+		@include rem(11);
+		text-transform: uppercase;
+	}
+
+	td {
+		@include rem(13);
+	}
+
+	th, td {
+		padding: 10px;
+		border: variable('grayDark');
+		&:empty {
+			background: variable('grayDark');
+		}
+	}
+}
+
+// ----------------------------------------
+// Selection highlight's color
+::-moz-selection {
+	background-color: variable('primary');
+	color: variable('white');
+}
+
+::selection {
+	background-color: variable('primary');
+	color: variable('white');
+}
+
+.box {
+	border-radius: 25px;
+	background: variable('gray-100');
+	box-shadow:  20px 20px 60px variable('gray-400'), 
+	             -20px -20px 60px variable('white');
+}
+
+.box--thin {
+	border-radius: 25px;
+	background: variable('gray-100');
+	box-shadow:  15px 15px 45px variable('gray-400'), 
+	             -15px -15px 45px variable('white');
+}
+
+
+.page-enter-active,
+.page-leave-active {
+	transform: translate3d(0, 0, 0);
+	transition: all $ease-in 0.45s;
+}
+.page-enter,
+.page-leave-to {
+	opacity: 0;
+	transform: translate3d(0, 25px, 0);
+}
+
+
+[data-icon] {
+	@include make-icon-content();
+}
+
+.Icon {
+	@include make-icon();
+}
+
+// center
+.Icon-center {
+	@include make-icon('center');
+}
+
+// left
+.Icon-left {
+	@include make-icon('left');
+}
+
+// right
+.Icon-right {
+	@include make-icon('right');
+}

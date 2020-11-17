@@ -1,0 +1,205 @@
+@import '~/assets/stylesheets/prod/includes/functions';
+
+// PX to REM
+@mixin rem($px, $important: false){
+	$rem : $px / $font-base-unit;
+	font-size: #{$rem}rem;
+}
+
+// Style input's placeholder
+@mixin Placeholder($fontSize, $lineHeight, $color) {
+	::-webkit-input-placeholder {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+	:-moz-placeholder {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+	::-moz-placeholder {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+	:-ms-input-placeholder {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+	::-ms-input-placeholder {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+	:placeholder-shown {
+		font-size: $fontSize;
+		line-height: $lineHeight;
+		color: $color;
+	}
+}
+
+@mixin make-input() {
+	display: block;
+	width: 100%;
+	padding: 14px 17px;
+	background: none;
+	border: none; 
+	@include rem(14);
+	line-height: 1;
+	color: variable('white');
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+
+// ----------------------------------------
+// ----------------------------------------
+// Grid BEGIN
+@mixin make-container() {
+	width: 100%;
+	padding-left: variable('grid-gutter-width');
+	padding-right: variable('grid-gutter-width');
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@mixin make-container-mq($bp) {
+	@include make-container();
+	$offset : variable('grid-gutter-width') / 2;
+
+	@each $breakpoint, $value in $breakpoints {
+		@if $breakpoint == $bp {
+			@include mediaq('>#{$value}') {
+				max-width: $value - $offset;
+			}
+		}
+	}
+}
+
+@mixin make-container-half-mq($bp) {
+	@include make-container();
+	$offset : variable('grid-gutter-width') / 2;
+
+	@each $breakpoint, $value in $breakpoints {
+		@if $breakpoint == $bp {
+			@include mediaq('>#{$value}') {
+				max-width: ($value / 2) - $offset;
+			}
+		}	}
+}
+
+@mixin make-row() {
+	display: flex;
+	flex-wrap: wrap;
+	margin-right: calc(-1 * var(--grid-gutter-width));
+	margin-left: calc(-1 * var(--grid-gutter-width));
+}
+
+@mixin make-col-ready() {
+	position: relative;
+	// Prevent columns from becoming too narrow when at smaller grid tiers by
+	// always setting `width: 100%;`. This works because we use `flex` values
+	// later on to override this initial width.
+	width: 100%;
+	min-height: 1px; // Prevent collapsing
+	padding-right: variable('grid-gutter-width');
+	padding-left: variable('grid-gutter-width');
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+	flex: 0 0 percentage($size / $columns);
+	// Add a `max-width` to ensure content within each column does not blow out
+	// the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+	// do not appear to require this.
+	max-width: percentage($size / $columns);
+}
+// Grid BEGIN
+// ----------------------------------------
+// ----------------------------------------
+
+
+@mixin make-icon($direction : false) {
+	position:relative;
+	min-width:1em;
+	min-height:1em;
+	&:before{
+		position:absolute; 
+		top:50%;
+		transform: translateY(-50%); 
+		color: currentColor; 
+	}
+
+	@if $direction == 'center' {
+		&:before{
+			left:50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	@if $direction == 'left' {
+		padding-left:1.6em;
+		&:before{
+			left:0; 
+		}
+	}
+
+	@if $direction == 'right' {
+		padding-right:1.6em;
+		&:before{
+			right:0; 
+		}
+	}
+}
+
+@mixin make-icon-content($name : false) {
+	&:before {
+		font-family: 'Material Icons'!important;
+		content: attr(data-icon);
+		font-size: inherit;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		font-feature-settings: 'liga';
+		text-transform: none;
+		line-height: 1;
+		letter-spacing: normal;
+		word-wrap: normal;
+		white-space: nowrap;
+		direction: ltr;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	@if $name {
+		&:before {
+			content: $name;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+// -------------------------
+// Still a work in progress :)
+//
+// 	-- Feature to develop --
+//
+//	Responsive variation of:
+//	- auto margin
+//	- order (only going to be automated for first and last item, else it will generate way to much CSS)
+//	- align content
+
+.flex {
+	display: flex;
+}
+
+// durection
+.flex-row {
+	flex-direction: row!important;
+}
+
+.flex-row-reverse {
+	flex-direction: row-reverse!important;
+}
+
+.flex-column {
+	flex-direction: column!important;
+}
+
+.flex-column-reverse {
+	flex-direction: column-reverse!important;
+}
+
+
+// justify
+.justify-start {
+	justify-content: flex-start!important;
+}
+
+.justify-end {
+	justify-content: flex-end!important;
+}
+
+.justify-center {
+	justify-content: center!important;
+}
+
+.justify-between {
+	justify-content: space-between!important;
+}
+
+.justify-around {
+	justify-content: space-around!important;
+}
+
+// align
+.align-start {
+	align-items: flex-start!important
+}
+
+.align-end {
+	align-items: flex-end!important
+}
+
+.align-center {
+	align-items: center!important
+}
+
+.align-stretch {
+	align-items: flex-stretch!important
+}
+
+// fill - grow - shrink
+.flex-fill {
+	flex: 1 1 auto!important;
+}
+
+// wrap
+.flex-nowrap {
+	flex-wrap: nowrap!important;
+}
+
+.flex-wrap {
+	flex-wrap: wrap!important;
+}
+
+
+
+
+
+
