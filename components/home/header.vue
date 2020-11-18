@@ -3,15 +3,15 @@
 		<div class="c-SiteHeader__filter"></div>
 		<div
 			class="c-SiteHeader__background"
-			style="background-image: url(https://source.unsplash.com/random/1920x1080?camper)"
+			:style="`background-image: url(${this.data.fr.img})`"
 		></div>
 		<div class="c-SiteHeader__container container">
 			<div class="c-SiteHeader__content">
 				<div class="c-SiteHeader__content__text">
 					<div class="Editable">
 						<h1 class="TextColor--white">
-							<span>{{ title.first }}</span>
-							<span>{{ title.second }}</span>
+							<span v-html="this.data.fr.title.first"></span>
+							<span v-html="this.data.fr.title.second"></span>
 						</h1>
 					</div>
 				</div>
@@ -41,12 +41,13 @@ export default {
 
 	data() {
 		return {
-			title: {
-				first: 'Trace',
-				second: 'ta route',
-			},
+			// title: Object,
 			anchor_id: 'a-propos',
 		}
+	},
+
+	props: {
+		data: Object
 	},
 
 	methods: {

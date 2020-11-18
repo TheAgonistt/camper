@@ -1,6 +1,6 @@
 <template>
 	<div id="app">
-		<Home />
+		<Home :data="this.page" />
 	</div>
 </template>
 
@@ -33,12 +33,21 @@ export default {
 		}
 	},
 
+	async asyncData ({ $content }) {
+		const page = await $content('index').fetch()
+
+		return {
+			page
+		}
+	},
+
 	components: {
 		Home,
 	},
 
 	data() {
-		return {}
+		return {
+		}
 	},
 
 	computed: {

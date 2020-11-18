@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<Header />
+		<Header :data="this.data.header" />
 		<About />
 		<TextCarousel />
 		<Video />
@@ -33,6 +33,7 @@ export default {
 	},
 
 	props: {
+		data: Object,
 	},
 
 	data() {
