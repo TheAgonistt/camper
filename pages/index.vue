@@ -52,13 +52,13 @@ export default {
 
 	content: {
 	// Only search in title and description
-		fullTextSearchFields: ['title'],
-		nestedProperties: [
-			'title.en',
-			'title.fr',
-			'header.en',
-			'header.fr',
-		]
+		// fullTextSearchFields: ['title'],
+		// nestedProperties: [
+		// 	'title.en',
+		// 	'title.fr',
+		// 	'header.en',
+		// 	'header.fr',
+		// ]
 	},
 
 	computed: {
@@ -68,6 +68,7 @@ export default {
 	},
 
 	created() {
+		console.log('this.page', this.page);
 	}
 }
 </script>

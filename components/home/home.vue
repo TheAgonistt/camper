@@ -1,7 +1,7 @@
 <template>
 	<div>
-		<Header :data="this.data.header" />
-		<About />
+		<Header :data="this.data.fr.header" />
+		<About :data="this.data.fr.about" />
 		<TextCarousel />
 		<Video />
 		<Gallery />

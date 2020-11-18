@@ -6,10 +6,10 @@
                     <div class="c-About__image__inner">
                         <div class="c-About__image__wrapper">
                             <picture>
-                                <source :srcset="image.mobile" media="(max-width: 479px)">
-                                <source :srcset="image.mobile" media="(min-width: 480px) and (max-width: 767px)">
-                                <source :srcset="image.mobile" media="(min-width: 768px)">
-                                <img :src="image.mobile">
+                                <source :srcset="this.data.img" media="(max-width: 479px)">
+                                <source :srcset="this.data.img" media="(min-width: 480px) and (max-width: 767px)">
+                                <source :srcset="this.data.img" media="(min-width: 768px)">
+                                <img :src="this.data.img">
                             </picture>
                         </div>
                     </div>
@@ -19,15 +19,15 @@
                     <div class="c-About__content__inner">
                         <div class="c-About__content--text">
                             <div class="Editable">
-                                <span v-if="content.uptitle" v-html="content.uptitle" class="-uptitle TextColor--secondary"></span>
-                                <h2 v-if="content.title" v-html="content.title" class="-title TextColor--white"></h2>
-                                <p v-if="content.text" v-html="content.text" class="-text TextColor--gray-300"></p>
+                                <span v-if="this.data.uptitle" v-html="this.data.uptitle" class="-uptitle TextColor--secondary"></span>
+                                <h2 v-if="this.data.title" v-html="this.data.title" class="-title TextColor--white"></h2>
+                                <p v-if="this.data.text" v-html="this.data.text" class="-text TextColor--gray-300"></p>
                             </div>
                         </div>
 
                         <div class="c-About__content--button">
-                            <nuxt-link :to="content.button_url" class="c-Nav__logo__link flex align-center TextColor--white">
-                                <span v-html="content.button_label" class="TextColor--primary"></span>
+                            <nuxt-link :to="this.data.link.to" class="c-Nav__logo__link flex align-center TextColor--white">
+                                <span v-html="this.data.link.label" class="TextColor--primary"></span>
                             </nuxt-link>
                         </div>
                     </div>
@@ -61,6 +61,10 @@ export default {
                 tablet: 'https://source.unsplash.com/random/480x615?camper',
             }
 		}
+    },
+    
+    props: {
+		data: Object
 	},
 }
 </script>
