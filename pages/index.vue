@@ -50,6 +50,11 @@ export default {
 		}
 	},
 
+	content: {
+	// Only search in title and description
+		fullTextSearchFields: ['title', 'header']
+	}
+
 	computed: {
 	},
 
