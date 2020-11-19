@@ -4,12 +4,17 @@ backend:
 media_folder: static/upload
 public_folder: /img
 collections:
-  - name: "home" # Used in routes, e.g., /admin/collections/blog
+  - name: "index" # Used in routes, e.g., /admin/collections/blog
+    identifier_field: "Accueil"
     label: "Accueil" # Used in the UI
     folder: "content/index.json" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    filter: {field: "language", value: "fr"}
     fields: # The fields for each document, usually in front matter
-      - {label: "Titre entête - rangé 1", name: "fr.header.title.first", widget: "string"}
-      - {label: "Titre entête - rangé 2", name: "fr.header.title.second", widget: "string"}
-      - {label: "Image en tête", name: "fr.header.img", widget: "image"}
+      - label: "Titre entête"
+        name: "headertitle"
+        widget: "object"
+        fields: 
+        - {label: "Rangée 1", name: "first", widget: "string"}
+        - {label: "Rangé 2", name: "second", widget: "string"}

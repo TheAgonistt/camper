@@ -1,23 +1,17 @@
 {
     "en": {
-        "title": "Home",
-        "header": {
-            "title": {
-                "first": "Create",
-                "second": "your path"
-            },
-            "img": "https://source.unsplash.com/random/1920x1080?camper"
-        }
+        "headertitle": {
+            "first": "Create",
+            "second": "your path"
+        },
+        "headerimage": "https://source.unsplash.com/random/1920x1080?camper"
     },
     "fr" : {
-        "title": "Accueil",
-        "header": {
-            "title": {
-                "first": "trace",
-                "second": "ta route"
-            },
-            "img": "https://source.unsplash.com/random/1920x1080?camper"
+        "headertitle": {
+            "first": "trace",
+            "second": "ta route"
         },
+        "headerimage": "https://source.unsplash.com/random/1920x1080?camper",
         "about": {
             "uptitle": "À propos",
             "title": "NAV CAMPER OFFRE UN SERVICE CLÉ EN MAIN DE PERSONNALISATION DE CAMPEUR",
