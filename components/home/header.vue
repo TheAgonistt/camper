@@ -3,15 +3,15 @@
 		<div class="c-SiteHeader__filter"></div>
 		<div
 			class="c-SiteHeader__background"
-			:style="`background-image: url(${this.data.img})`"
+			:style="`background-image: url(${this.data.fr.headerimage})`"
 		></div>
 		<div class="c-SiteHeader__container container">
 			<div class="c-SiteHeader__content">
 				<div class="c-SiteHeader__content__text">
 					<div class="Editable">
 						<h1 class="TextColor--white">
-							<span v-html="this.data.title.first"></span>
-							<span v-html="this.data.title.second"></span>
+							<span v-html="this.data.fr.headertitle.first"></span>
+							<span v-html="this.data.fr.headertitle.second"></span>
 						</h1>
 					</div>
 				</div>
@@ -57,6 +57,10 @@ export default {
 			if (element)
 				element.scrollIntoView({behavior: 'smooth', block: 'start'});
 		}
+	},
+
+	created() {
+		console.log(':datadatadata', this.data);
 	}
 }
 </script>

@@ -6,10 +6,10 @@
                     <div class="c-About__image__inner">
                         <div class="c-About__image__wrapper">
                             <picture>
-                                <source :srcset="this.data.img" media="(max-width: 479px)">
-                                <source :srcset="this.data.img" media="(min-width: 480px) and (max-width: 767px)">
-                                <source :srcset="this.data.img" media="(min-width: 768px)">
-                                <img :src="this.data.img">
+                                <source :srcset="this.data.fr.about.img" media="(max-width: 479px)">
+                                <source :srcset="this.data.fr.about.img" media="(min-width: 480px) and (max-width: 767px)">
+                                <source :srcset="this.data.fr.about.img" media="(min-width: 768px)">
+                                <img :src="this.data.fr.about.img">
                             </picture>
                         </div>
                     </div>
@@ -19,15 +19,15 @@
                     <div class="c-About__content__inner">
                         <div class="c-About__content--text">
                             <div class="Editable">
-                                <span v-if="this.data.uptitle" v-html="this.data.uptitle" class="-uptitle TextColor--secondary"></span>
-                                <h2 v-if="this.data.title" v-html="this.data.title" class="-title TextColor--white"></h2>
-                                <p v-if="this.data.text" v-html="this.data.text" class="-text TextColor--gray-300"></p>
+                                <span v-if="this.data.fr.about.uptitle" v-html="this.data.fr.about.uptitle" class="-uptitle TextColor--secondary"></span>
+                                <h2 v-if="this.data.fr.about.title" v-html="this.data.fr.about.title" class="-title TextColor--white"></h2>
+                                <p v-if="this.data.fr.about.text" v-html="this.data.fr.about.text" class="-text TextColor--gray-300"></p>
                             </div>
                         </div>
 
                         <div class="c-About__content--button">
-                            <nuxt-link :to="this.data.link.to" class="c-Nav__logo__link flex align-center TextColor--white">
-                                <span v-html="this.data.link.label" class="TextColor--primary"></span>
+                            <nuxt-link :to="this.data.fr.about.link.to" class="c-Nav__logo__link flex align-center TextColor--white">
+                                <span v-html="this.data.fr.about.link.label" class="TextColor--primary"></span>
                             </nuxt-link>
                         </div>
                     </div>

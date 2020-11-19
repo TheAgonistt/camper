@@ -6,8 +6,9 @@ public_folder: /img
 collections:
   - name: "index" # Used in routes, e.g., /admin/collections/blog
     identifier_field: "Accueil"
+    extension: "json"
     label: "Accueil" # Used in the UI
-    folder: "content/index.json" # The path to the folder where the documents are stored
+    folder: "content/home/index.json" # The path to the folder where the documents are stored
     create: true # Allow users to create new documents in this collection
     slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
     filter: {field: "language", value: "fr"}
@@ -18,3 +19,4 @@ collections:
         fields: 
         - {label: "Rangée 1", name: "first", widget: "string"}
         - {label: "Rangé 2", name: "second", widget: "string"}
+      - {label: "Image", name: "headerimage", widget: "image", required: false}

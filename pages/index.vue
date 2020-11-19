@@ -34,7 +34,7 @@ export default {
 	},
 
 	async asyncData ({ $content }) {
-		const page = await $content('index').fetch()
+		const page = await $content('/home/index').fetch()
 
 		return {
 			page
@@ -66,9 +66,5 @@ export default {
 
 	methods: {
 	},
-
-	created() {
-		console.log('this.page', this.page);
-	}
 }
 </script>
