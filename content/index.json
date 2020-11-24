@@ -1,17 +1,17 @@
 {
   "headertitle": {
-    "first": "trace",
-    "second": "ta route"
+    "first": "trace test",
+    "second": "ta route test"
   },
-  "headerimage": "https://source.unsplash.com/random/1920x1080?camper",
+  "headerimage": "/img/dog_nose_dry_hero.jpg",
   "about": {
-      "uptitle": "À propos",
-      "title": "NAV CAMPER OFFRE UN SERVICE CLÉ EN MAIN DE PERSONNALISATION DE CAMPEUR",
-      "text": "Que ce soit un Ford Transit, un Mercedez Sprinter ou encore un Ram Promaster, l’équipe de Nav vous accompagne dans l’élaboration et la conception d’un espace à votre image.",
-      "img": "https://source.unsplash.com/random/480x615?camper",
-      "link": {
-          "label": "Découvrez nos services",
-          "to": "/services"
-      }
+    "uptitle": "À propos",
+    "title": "NAV CAMPER OFFRE UN SERVICE CLÉ EN MAIN DE PERSONNALISATION DE CAMPEUR",
+    "text": "Que ce soit un Ford Transit, un Mercedez Sprinter ou encore un Ram Promaster, l’équipe de Nav vous accompagne dans l’élaboration et la conception d’un espace à votre image.",
+    "img": "https://source.unsplash.com/random/480x615?camper",
+    "link": {
+      "label": "Découvrez nos services",
+      "to": "/services"
+    }
   }
 }
