@@ -58,10 +58,6 @@ export default {
 				element.scrollIntoView({behavior: 'smooth', block: 'start'});
 		}
 	},
-
-	created() {
-		console.log(':datadatadata', this.data);
-	}
 }
 </script>
 
