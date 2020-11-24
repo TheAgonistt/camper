@@ -2,7 +2,8 @@
   "header": {
     "titlefirst": "trace test",
     "titlesecond": "ta route test",
-    "image": "/images/uploads/dog_nose_dry_hero.jpg"
+    "image": "/images/uploads/dog_nose_dry_hero.jpg",
+    "img": "/img/dog_nose_dry_hero.jpg"
   },
   "about": {
     "uptitle": "À propos",
