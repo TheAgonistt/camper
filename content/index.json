@@ -1,9 +1,9 @@
 {
-  "headertitle": {
-    "first": "trace test",
-    "second": "ta route test"
+  "header": {
+    "titlefirst": "trace test",
+    "titlesecond": "ta route test",
+    "image": "/images/uploads/dog_nose_dry_hero.jpg",
   },
-  "headerimage": "/images/uploads/dog_nose_dry_hero.jpg",
   "about": {
     "uptitle": "À propos",
     "title": "NAV CAMPER OFFRE UN SERVICE CLÉ EN MAIN DE PERSONNALISATION DE CAMPEUR",
