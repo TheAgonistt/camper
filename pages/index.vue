@@ -34,7 +34,7 @@ export default {
 	},
 
 	async asyncData ({ $content }) {
-		const page = await $content('/home/index').fetch()
+		const page = await $content('index').fetch()
 
 		return {
 			page
