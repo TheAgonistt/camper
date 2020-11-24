@@ -13,5 +13,10 @@
       "label": "Découvrez nos services",
       "to": "/services"
     }
+  },
+  "header": {
+    "titlefirst": "Trace",
+    "titlesecond": "ta route",
+    "img": "/img/dog_nose_dry_hero.jpg"
   }
 }
