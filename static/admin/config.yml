@@ -28,4 +28,3 @@ collections:
         - {label: "Titre", name: "title", widget: "string"}
         - {label: "Texte", name: "text", widget: "text"}
         - {label: "Image", name: "img", widget: "image", required: true}
-      

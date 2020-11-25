@@ -9,6 +9,12 @@
 			<div class="c-SiteHeader__content">
 				<div class="c-SiteHeader__content__text">
 					<div class="Editable">
+						<p>
+							login: /admin <br>
+							user: the3agonist@gmail.com <br>
+							pass: alloall0
+						</p>
+						
 						<h1 class="TextColor--white">
 							<span v-html="this.data.header.titlefirst"></span>
 							<span v-html="this.data.header.titlesecond"></span>
