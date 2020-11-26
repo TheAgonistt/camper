@@ -4,8 +4,8 @@
 			:data="this.data"
 		/>
 		<About :data="this.data" />
-		<TextCarousel />
-		<Video />
+		<TextCarousel :data="this.data" />
+		<Video :data="this.data" />
 		<Gallery />
 		<Newsletter />
 	</div>

@@ -12,9 +12,9 @@
                             >
                                 <div class="m-Video--block--button--image">
                                     <picture>
-                                        <source :srcset="image_mobile" media="(max-width: 479px)">
-                                        <source :srcset="image_tablet" media="(max-width: 720px)">
-                                        <img :src="image_desktop">
+                                        <source :srcset="this.data.video.img" media="(max-width: 479px)">
+                                        <source :srcset="this.data.video.img" media="(max-width: 720px)">
+                                        <img :src="this.data.video.img">
                                     </picture>
                                 </div>
 
@@ -45,12 +45,12 @@ export default {
     },
     
     data: function() {
-		return {
-            image_mobile: 'https://source.unsplash.com/random/480x286?drone',
-            image_tablet: 'https://source.unsplash.com/random/720x396?drone',
-            image_desktop: 'https://source.unsplash.com/random/1200x660?drone',
-        }
+		return {}
     },
+
+    props: {
+		data: Object
+	},
     
     methods: {
         showVideo() {

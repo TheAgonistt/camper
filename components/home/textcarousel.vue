@@ -1,15 +1,17 @@
 <template>
-	<section class="m-TextCarousel BlockColor--primary" id="tagline">
+	<section
+        v-if="this.data.carouseltext"
+        class="m-TextCarousel BlockColor--primary" id="tagline">
         <div class="m-TextCarousel__inner">
             <div class="m-TextCarousel--text">
                 <client-only
                     placeholder="Loading..."
                 >
                     <infinite-slide-bar
-                        duration="440s"
+                        duration="1250s"
                         :barStyle="{ 'animation-fill-mode': 'both' }"
                     >
-                        <span class="TextColor--secondary">prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - </span>
+                        <span class="TextColor--secondary" v-html="this.data.carouseltext"></span>
                     </infinite-slide-bar>   
                 </client-only>
             </div>
@@ -27,8 +29,8 @@ export default {
 		Link
     },
     
-    data: function() {
-		return {}
+    props: {
+		data: Object
 	},
 }
 </script>
@@ -42,13 +44,6 @@ export default {
         overflow: hidden;
 
         &--text {
-            // position: absolute;
-            // top: 50%;
-            // left: 50%;
-    
-            // 
-            // transform: translate3d(-50%, -50%, 0);
-
             span {
                 @include rem(48);
                 font-weight: variable('font-bold');

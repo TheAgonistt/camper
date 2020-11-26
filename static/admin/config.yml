@@ -37,3 +37,8 @@ collections:
       - label: "Carousel de texte"
         name: "carouseltext"
         widget: "string"
+      - label: "Vidéo"
+        name: "video"
+        widget: "object"
+        fields:
+          - {label: "Image", name: "img", widget: "image", required: true}
