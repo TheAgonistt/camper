@@ -5,6 +5,7 @@ media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
   - name: "index" # Used in routes, e.g., /admin/collections/blog
+    title: "Accueill"
     identifier_field: "Accueil"
     extension: "json"
     format: "json"
@@ -42,3 +43,16 @@ collections:
         widget: "object"
         fields:
           - {label: "Image", name: "img", widget: "image", required: true}
+      - label: "Gallerie"
+        name: "gallery"
+        widget: "list"
+        summary: '{{fields.title}}'
+        fields:
+          - {label: "Image", name: "image", widget: "image", required: true}
+          - label: "Contenu"
+            name: "content"
+            widget: "object"
+            fields:
+              - {label: "Surtitre", name: "uptitle", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string", required: true}
+              - {label: "Texte", name: "text", widget: "markdown"}
