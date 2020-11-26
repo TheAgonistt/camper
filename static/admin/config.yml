@@ -28,3 +28,12 @@ collections:
         - {label: "Titre", name: "title", widget: "string"}
         - {label: "Texte", name: "text", widget: "text"}
         - {label: "Image", name: "img", widget: "image", required: true}
+        - label: "Lien"
+          name: "link"
+          widget: "object"
+          fields:
+            - {label: "Label", name: "label", widget: "string"}
+            - {label: "Url (exemple: /services)", name: "to", widget: "string"}
+      - label: "Carousel de texte"
+        name: "carouseltext"
+        widget: "string"
