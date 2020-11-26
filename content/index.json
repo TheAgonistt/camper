@@ -18,5 +18,15 @@
   "carouseltext": "prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - prêt pour l’aventure — vivez l’expérience nav - ",
   "video": {
     "img": "/images/uploads/photo-1532115298834-4c70d11ec8f3.jpg"
-  }
+  },
+  "gallery": [
+    {
+      "image": "/images/uploads/photo-1532115298834-4c70d11ec8f3.jpg",
+      "content": {
+        "uptitle": "Surtitre",
+        "title": "Titre",
+        "text": "Lorem ipsum dolor sit amet, **consectetur** adipiscing elit. Curabitur ultrices tristique elit, vitae lacinia nisi scelerisque vitae. Mauris vehicula varius tellus, porta consectetur sem ultricies at. Aenean sed justo *blandit*, convallis ante scelerisque, cursus tellus. Nullam quis finibus est. Integer commodo pellentesque turpis, eu aliquam purus pulvinar quis. Nullam maximus pellentesque felis, ac viverra neque vestibulum id. Fusce id dolor mauris."
+      }
+    }
+  ]
 }
