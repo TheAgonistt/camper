@@ -14,7 +14,7 @@
 							user: the3agonist@gmail.com <br>
 							pass: alloall0
 						</p>
-						
+
 						<h1 class="TextColor--white">
 							<span v-html="this.data.header.titlefirst"></span>
 							<span v-html="this.data.header.titlesecond"></span>
@@ -64,10 +64,6 @@ export default {
 				element.scrollIntoView({behavior: 'smooth', block: 'start'});
 		}
 	},
-
-	created() {
-		console.log(this.data);
-	}
 }
 </script>
 

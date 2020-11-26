@@ -48,24 +48,16 @@ export default {
     },
     
     data: function() {
-		return {
-			content: {
-                uptitle: 'À propos',
-                title: 'nav&nbsp;camper offre un service clé en main de personnalisation de campeur ',
-                text: 'Que ce soit un Ford Transit, un Mercedez Sprinter ou encore un Ram Promaster, l’équipe de Nav vous accompagne dans l’élaboration et la conception d’un espace à votre image.',
-                button_label: 'Découvrez nos services',
-                button_url: '/services',
-            },
-            image: {
-                mobile: 'https://source.unsplash.com/random/480x615?camper',
-                tablet: 'https://source.unsplash.com/random/480x615?camper',
-            }
-		}
+		return {}
     },
     
     props: {
 		data: Object
-	},
+    },
+    
+    created() {
+		console.log('about: ', this.data.about);
+	}
 }
 </script>
 
