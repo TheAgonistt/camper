@@ -25,7 +25,8 @@
       "content": {
         "uptitle": "Surtitre slider 1",
         "title": "Titre slider 1",
-        "text": "Lorem ipsum dolor sit amet, **consectetur** adipiscing elit. Curabitur ultrices tristique elit, vitae lacinia nisi scelerisque vitae. Mauris vehicula varius tellus, porta consectetur sem ultricies at. Aenean sed justo *blandit*, convallis ante scelerisque, cursus tellus. Nullam quis finibus est. Integer commodo pellentesque turpis, eu aliquam purus pulvinar quis. Nullam maximus pellentesque felis, ac viverra neque vestibulum id. Fusce id dolor mauris."
+        "text": "Lorem ipsum dolor sit amet, **consectetur** adipiscing elit. Curabitur ultrices tristique elit, vitae lacinia nisi scelerisque vitae. Mauris vehicula varius tellus, porta consectetur sem ultricies at. Aenean sed justo *blandit*, convallis ante scelerisque, cursus tellus. Nullam quis finibus est. Integer commodo pellentesque turpis, eu aliquam purus pulvinar quis. Nullam maximus pellentesque felis, ac viverra neque vestibulum id. Fusce id dolor mauris.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices tortor in ex lacinia, eleifend euismod nunc ornare. Integer odio lorem, luctus a augue et, imperdiet vestibulum mauris. Pellentesque lacinia enim ac pharetra dictum. Proin blandit sem quis lorem fringilla, quis pretium nisl feugiat. Nam posuere nisl ligula, id congue quam egestas sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis sodales gravida nulla nec imperdiet."
       }
     },
     {
@@ -33,7 +34,8 @@
       "content": {
         "uptitle": "Surtitre slider 2",
         "title": "Titre slider 2",
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices tortor in ex lacinia, eleifend euismod nunc ornare. Integer odio lorem, luctus a augue et, imperdiet vestibulum mauris. Pellentesque **lacinia enim** ac pharetra dictum. Proin *blandit* sem quis lorem fringilla, quis pretium nisl feugiat. Nam posuere nisl ligula, id congue quam egestas sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis sodales gravida nulla nec imperdiet."
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices tortor in ex lacinia, eleifend euismod nunc ornare. Integer odio lorem, luctus a augue et, imperdiet vestibulum mauris. Pellentesque **lacinia enim** ac pharetra dictum. Proin *blandit* sem quis lorem fringilla, quis pretium nisl feugiat. Nam posuere nisl ligula, id congue quam egestas sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis sodales gravida nulla nec imperdiet.",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices tortor in ex lacinia, eleifend euismod nunc ornare. Integer odio lorem, luctus a augue et, imperdiet vestibulum mauris. Pellentesque lacinia enim ac pharetra dictum. Proin blandit sem quis lorem fringilla, quis pretium nisl feugiat. Nam posuere nisl ligula, id congue quam egestas sed. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. Duis sodales gravida nulla nec imperdiet. dfssd f"
       }
     }
   ]
