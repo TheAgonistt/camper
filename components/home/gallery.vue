@@ -8,26 +8,41 @@
                     :dots="false"
                 >
                     <div
-                        v-for="(item, index) in 2"
+                        v-for="(item, index) in  this.data.gallery"
                         v-bind:key="index"
                         class="m-Gallery__slide slide"
                     >
                         <div class="m-Gallery__row">
                             <div class="m-Gallery__media">
-                                <picture>
-                                    <source :srcset="image_mobile" media="(max-width: 479px)">
-                                    <source :srcset="image_tablet" media="(max-width: 720px)">
-                                    <source :srcset="image_phablet" media="(max-width: 991px)">
-                                    <img :src="image_desktop">
-                                </picture>
+                                <div class="m-Gallery__media--image">
+                                    <picture>
+                                        <!-- <source :srcset="image_mobile" media="(max-width: 479px)">
+                                        <source :srcset="image_tablet" media="(max-width: 720px)">
+                                        <source :srcset="image_phablet" media="(max-width: 991px)"> -->
+                                        <img :src="item.image">
+                                    </picture>
+                                </div>
                             </div>
 
                             <div class="m-Gallery__content">
                                 <div class="m-Gallery__content__inner">
                                     <div class="Editable">
-                                        <h5 class="TextColor--secondary -uptitle">Galerie photos</h5>
-                                        <h3 class="TextColor--white -title">Rangement</h3>
-                                        <p class="TextColor--gray-300">Urna dictum amet, commodo feugiat hendrerit interdum non viverra. Enim in in felis blandit. At consectetur pretium cursus ut fames lacus, lectus tincidunt.</p>
+                                        <h5 
+                                            class="TextColor--secondary -uptitle"
+                                            v-if="item.content.uptitle"
+                                            v-html="item.content.uptitle"
+                                        ></h5>
+                                        <h3
+                                            class="TextColor--white -title"
+                                            v-if="item.content.title"
+                                            v-html="item.content.title"
+                                        ></h3>
+
+                                        <p
+                                            class="TextColor--gray-300"
+                                            v-if="item.content.text"
+                                            v-html="item.content.text"
+                                        ></p>
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +88,12 @@ export default {
         }
     },
 
+    props: {
+		data: Object
+	},
+
     created() {
+        console.log('gallery: ', this.data.gallery);
     },
     
     methods: {
@@ -205,13 +225,23 @@ export default {
                 // width: 50vw;
                 // max-width: 50vw;
 
-                img {
+                &--image {
                     position: absolute;
                     top: 0;
                     right: 0;
                     bottom: 0;
                     width: 50vw;
                     max-width: 50vw;
+                    overflow: hidden;
+
+                    img {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        object-fit: cover;
+                    }
                 }
             }
 
@@ -219,16 +249,16 @@ export default {
                 position: relative;
                 align-self: flex-end;
                 @include make-col(1, 2);
-                &:before {
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    right: 0;
-                    bottom: 0;
-                    width: 1px;
-                    background: variable('primary');
-                    mix-blend-mode: screen;
-                }
+                // &:before {
+                //     content: '';
+                //     position: absolute;
+                //     top: 0;
+                //     right: 0;
+                //     bottom: 0;
+                //     width: 1px;
+                //     background: variable('primary');
+                //     mix-blend-mode: screen;
+                // }
 
                 .Editable {
                     text-align: left;
@@ -238,8 +268,10 @@ export default {
                     padding-top: 100px;
                     padding-bottom: 80px;
                     padding-right: 100px;
+                    // margin-right: auto!important;
+                    margin: 0!important;
                     // padding-top: 160px;
-                    max-width: 100%;
+                    max-width: 620px;
                 }
             }
 

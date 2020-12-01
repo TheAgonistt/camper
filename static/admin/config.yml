@@ -55,4 +55,4 @@ collections:
             fields:
               - {label: "Surtitre", name: "uptitle", widget: "string"}
               - {label: "Titre", name: "title", widget: "string", required: true}
-              - {label: "Texte", name: "text", widget: "markdown"}
+              - {label: "Texte", name: "text", widget: "text"}

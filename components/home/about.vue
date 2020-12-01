@@ -55,9 +55,9 @@ export default {
 		data: Object
     },
     
-    created() {
-		console.log('about: ', this.data.about);
-	}
+    // created() {
+	// 	console.log('about: ', this.data.about);
+	// }
 }
 </script>
 
@@ -147,6 +147,8 @@ export default {
 
         // MD + BEGIN
         @include mediaq('>MD') {
+            overflow: hidden;
+
             &__content {
                 &:before {
                     content: '';
