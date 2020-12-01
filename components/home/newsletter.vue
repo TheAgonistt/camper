@@ -194,6 +194,7 @@ export default {
         @include mediaq('>MD') {
             position: relative;
             padding: 0;
+            max-width: 100%;
 
             &:before {
                 content: '';
@@ -202,6 +203,7 @@ export default {
                 left: 50%;
                 bottom: 0;
                 width: 1px;
+                margin-left: -1px;
                 background: variable('primary');
                 mix-blend-mode: screen;
             }

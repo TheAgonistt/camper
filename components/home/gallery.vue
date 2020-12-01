@@ -230,7 +230,7 @@ export default {
                     top: 0;
                     right: 0;
                     bottom: 0;
-                    width: 50vw;
+                    width: calc(50vw - 8px);
                     max-width: 50vw;
                     overflow: hidden;
 
