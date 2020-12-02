@@ -56,6 +56,7 @@ export default {
     { src: '~/plugins/vue-easy-lightbox.js', mode: 'client' },
     { src: '~/plugins/vue-agile.js', mode: 'client' },
     { src: '~/plugins/vue-infiniteslidebar.js', mode: 'client' },
+    { src: '~/plugins/vue-youtube.js', mode: 'client' },
   ],
   /*
   ** Nuxt.js dev-modules
