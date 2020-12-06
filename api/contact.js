@@ -2,10 +2,9 @@ const express = require('express')
 const nodemailer = require('nodemailer')
 const validator = require('validator')
 const xssFilters = require('xss-filters')
-let fs = require('fs');
 
 const app = express()
-const attributes = ['firstname', 'lastname', 'email', 'msg', 'phone', 'poste', 'file']
+const attributes = ['name', 'email', 'msg', 'subject', 'phone']
 
 app.use(express.json())
 
@@ -32,13 +31,11 @@ module.exports = {
 
 const validateAndSanitize = (key, value) => {
 	const rejectFunctions = {
-		firstname: v => v.length < 1,
-		lastname: v => v.length < 1,
+		name: v => v.length < 1,
 		email: v => !validator.isEmail(v) && v.length < 5,
 		msg: v => v.length < 1,
+		subject: v => v.length < 1,
 		phone: v => v.length < 1,
-		poste: v => v.length < 1,
-		file: v => v.length < 1,
 	}
 
 	// if object has key and function returns false, return sanitized input. Else, return false
@@ -46,33 +43,28 @@ const validateAndSanitize = (key, value) => {
 }
 
 
-const sendMail = (firstname, lastname, email, msg, phone, poste, file) => {
+const sendMail = (name, email, msd, subject, phone) => {
 	let transporter = nodemailer.createTransport({
 		host: 'smtp.sendgrid.net',
-		port: 587,
+		port: 465,
 		secure: false,
 		auth: {
 			user: 'apikey',
-			pass: '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'
+			pass: process.env.SENDGRID
 		},
 	})
 
-	let fileType = '';
-	const filePath = file;
-	const dot = filePath.lastIndexOf('.');
-	fileType = filePath.substring(dot + 1);
-
 	let mailOptions = {
-		from: 'support@acolyte.ws',
-		to: 'info@acolyte.ws,christopher@acolyte.ws,carolane@acolyte.ws',
-		subject: `Change la game: nouveau CV (${poste})`,
-		html: Template(firstname, lastname, email, msg, phone, poste),
-		attachments: [
-			{
-				filename: `${poste}-${firstname}-${lastname}-${Date.now()}.${fileType}`,
-				content: fs.createReadStream(file),
-			}
-		]
+		from: 'the3agonist@gmail.com',
+		to: 'the3agonist@gmail.com',
+		subject: `Test email (${subject})`,
+		html: Template(name, email, msd, subject, phone),
+		// attachments: [
+		// 	{
+		// 		filename: `${poste}-${firstname}-${lastname}-${Date.now()}.${fileType}`,
+		// 		content: fs.createReadStream(file),
+		// 	}
+		// ]
 	}
 
 	// verify connection configuration
@@ -89,24 +81,9 @@ const sendMail = (firstname, lastname, email, msg, phone, poste, file) => {
 	})
 }
 
-const Template = (firstname, lastname, email, msg, phone, poste) => {
+const Template = (name, email, msd, subject, phone) => {
 	return(`
-		<h2>Salut les acolytes!</h2>
-		<p>
-			Un nouveau CV est disponible pour le poste ${poste}. <br />
-		</p>
-
-		<h3>Détails:</h3>
-		<p>
-			<strong>Nom complet</strong>: ${firstname} ${lastname} <br />
-			<strong>Courriel</strong>: ${email} <br />
-			<strong>Téléphone</strong>: ${phone} <br />
-			<strong>Poste</strong>: ${poste} <br />
-		</p>
-
-		<p>
-			<strong>Message</strong>: <br />
-			${msg}
-		</p>
+		<h1>Text EMAIL !!</h1>
+		<h2>${name}</h2>
 	`)
 }

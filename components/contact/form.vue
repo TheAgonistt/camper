@@ -80,6 +80,7 @@
 <script>
 // assets
 // import Arrow from "~/assets/img/icons/arrow-long-right.svg?inline";
+const axios = require('axios');
 
 // ** Components
 import Button from '~/components/shared/button.vue';
@@ -114,57 +115,51 @@ export default {
 		}
 	},
 
-	  methods: {
-      sendForm() {
+	methods: {
+		sendForm() {
 			this.errors = [];
 			this.success = [];
 
-			console.log('YOOO');
+			axios.post('/api/contact', {
+				name: this.name,
+				msg: this.msg,
+				email: this.email,
+				subject: this.subject,
+				phone: this.phone,
+			})
 
-			if (this.fileReady) {
-				axios.post('/api/contact', {
-					firstname: this.firstname,
-					lastname: this.lastname,
-					email: this.email,
-					subject: this.msg,
-					phone: this.phone,
-				})
-
-				.then(response => {
-					//handle success
-					console.log('SUCCESS!!');
-					console.log(response);
-					this.success.push(response.statusText)
-				})
-				.catch(error => {
-					if (error.response) {
-						// The request was made and the server responded with a status code
-						// that falls out of the range of 2xx
-						console.log('----');
-						console.log('error.response: ', error.response.data);
-						console.log('error.response: ', error.response.status);
-						console.log('error.response: ', error.response.headers);
-					} else if (error.request) {
-						// The request was made but no response was received
-						// `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-						// http.ClientRequest in node.js
-						console.log('----');
-						console.log('error.request: ', error.request);
-					} else {
-						// Something happened in setting up the request that triggered an Error
-						console.log('----');
-						console.log('Error: ', error.message);
-					}
-
+			.then(response => {
+				//handle success
+				console.log('SUCCESS!!');
+				console.log(response);
+				this.success.push(response.statusText)
+			})
+			.catch(error => {
+				if (error.response) {
+					// The request was made and the server responded with a status code
+					// that falls out of the range of 2xx
 					console.log('----');
-					console.log('error.config: ', error.config);
-					this.errors.push('push message: ', error.message);
-				})
-			} else {
-				this.errors.push('Veuillez remplir tous les champs')
-			}
+					console.log('error.response: ', error.response.data);
+					console.log('error.response: ', error.response.status);
+					console.log('error.response: ', error.response.headers);
+				} else if (error.request) {
+					// The request was made but no response was received
+					// `error.request` is an instance of XMLHttpRequest in the browser and an instance of
+					// http.ClientRequest in node.js
+					console.log('----');
+					console.log('error.request: ', error.request);
+				} else {
+					// Something happened in setting up the request that triggered an Error
+					console.log('----');
+					console.log('Error: ', error.message);
+				}
+
+				console.log('----');
+				console.log('error.config: ', error.config);
+				this.errors.push('push message: ', error.message);
+			})
 		},
-  }
+	}
 }
 </script>
 
