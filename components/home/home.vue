@@ -7,7 +7,7 @@
 		<TextCarousel :data="this.data" />
 		<Video :data="this.data" />
 		<Gallery :data="this.data" />
-		<Newsletter />
+		<Newsletter :data="this.data" />
 	</div>
 </template>
 

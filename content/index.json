@@ -38,5 +38,11 @@
         "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices tortor in ex lacinia, eleifend euismod nunc ornare. Integer odio lorem, luctus a augue et, imperdiet vestibulum mauris. Pellentesque lacinia enim ac pharetra dictum. Proin blandit sem quis lorem fringilla."
       }
     }
-  ]
+  ],
+  "newsletter" : {
+    "button": {
+      "label": "Démarrez <br/> votre projet",
+      "to": "/contact"
+    }
+  }
 }

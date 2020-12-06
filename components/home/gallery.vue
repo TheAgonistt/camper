@@ -93,7 +93,6 @@ export default {
 	},
 
     created() {
-        console.log('gallery: ', this.data.gallery);
     },
     
     methods: {

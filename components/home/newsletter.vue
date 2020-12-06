@@ -2,19 +2,25 @@
 	<section class="c-Newsletter BlockColor--primary" id="newsletter">
         <div class="container">
             <div class="c-Newsletter__row row">
-                <div class="c-Newsletter__start col-12 col-MD-6">
+                <div
+                    v-if="this.data.newsletter.button.label && this.data.newsletter.button.to"
+                    class="c-Newsletter__start col-12 col-MD-6"
+                >
                     <div class="c-Newsletter__start__inner">
-                        <a href="#" class="c-Newsletter__start--button">
+                        <nuxt-link :to="this.data.newsletter.button.to" class="c-Newsletter__start--button">
                             <div class="c-Newsletter__start--button__inner">
                                 <div class="Editable">
-                                    <span class="TextColor--white">Démarrez <br> votre projet</span>
+                                    <span
+                                        v-html="this.data.newsletter.button.label"
+                                        class="TextColor--white"
+                                    ></span>
                                 </div>
 
                                 <div class="c-Newsletter__start--button--icon">
                                     <Arrow />
                                 </div>
                             </div>
-                        </a>
+                        </nuxt-link>
                     </div>
                 </div>
 
@@ -24,7 +30,10 @@
                             <div class="Editable">
                                 <h4 class="-uptitle TextColor--secondary">Infolettre</h4>
                                 <h3 class="-title TextColor--white">Restez informez</h3>
-                                <p class="TextColor--gray-300">Urna dictum amet, commodo feugiat hendrerit interdum non viverra. Enim in in felis blandit. At consectetur pretium cursus ut fames lacus, lectus tincidunt.</p>
+                                <p 
+                                    v-if="this.data.newsletter.text"
+                                    v-html="this.data.newsletter.text"
+                                    class="TextColor--gray-300"></p>
                             </div>
                         </div>
 
@@ -48,6 +57,7 @@
 	</section>
 </template>
 
+
 <script>
 // assets
 import Arrow from "~/assets/img/icons/arrow-long-right.svg?inline";
@@ -60,6 +70,10 @@ export default {
 	components: {
         Arrow,
     },
+
+    props: {
+		data: Object
+	},
     
     data: function() {
 		return {
@@ -67,6 +81,7 @@ export default {
     },
 
     created() {
+        console.log('newsletter: ', this.data.newsletter);
     },
     
     methods: {
