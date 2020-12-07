@@ -1,0 +1,11 @@
+{
+  "name": "nav-camper",
+  "short_name": "nav-camper",
+  "description": "Yasss",
+  "icons": [],
+  "start_url": "/?standalone=true",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#00C0F3",
+  "lang": "en"
+}

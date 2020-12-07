@@ -1,0 +1,87 @@
+backend:
+  name: git-gateway
+  branch: main
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+collections:
+  - name: "index" # Used in routes, e.g., /admin/collections/blog
+    title: "Accueil"
+    identifier_field: "Accueil"
+    extension: "json"
+    format: "json"
+    label: "Accueil" # Used in the UI
+    folder: "content/" # The path to the folder where the documents are stored
+    create: false # Allow users to create new documents in this collection
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - label: "Entête"
+        name: "header"
+        widget: "object"
+        fields: 
+        - {label: "Titre - rangée 1", name: "titlefirst", widget: "string"}
+        - {label: "Titre - rangée 2", name: "titlesecond", widget: "string"}
+        - {label: "Image", name: "img", widget: "image", required: true}
+      - label: "À propos"
+        name: "about"
+        widget: "object"
+        fields: 
+        - {label: "Surtitre", name: "uptitle", widget: "string"}
+        - {label: "Titre", name: "title", widget: "string"}
+        - {label: "Texte", name: "text", widget: "text"}
+        - {label: "Image", name: "img", widget: "image", required: true}
+        - label: "Lien"
+          name: "link"
+          widget: "object"
+          fields:
+            - {label: "Label", name: "label", widget: "string"}
+            - {label: "Url (exemple: /services)", name: "to", widget: "string"}
+      - label: "Carousel de texte"
+        name: "carouseltext"
+        widget: "string"
+      - label: "Vidéo"
+        name: "video"
+        widget: "object"
+        fields:
+          - {label: "Image", name: "img", widget: "image", required: true}
+      - label: "Gallerie"
+        name: "gallery"
+        widget: "list"
+        summary: '{{fields.content.title}}'
+        fields:
+          - {label: "Image", name: "image", widget: "image", required: true}
+          - label: "Contenu"
+            name: "content"
+            widget: "object"
+            fields:
+              - {label: "Surtitre", name: "uptitle", widget: "string"}
+              - {label: "Titre", name: "title", widget: "string", required: true}
+              - {label: "Texte", name: "text", widget: "text"}
+      - label: "Infolettre"
+        name: "newsletter"
+        widget: "object"
+        fields:
+        - {label: "Contenu", name: "text", widget: "string"}
+        - label: "Lien"
+          name: "button"
+          widget: "object"
+          fields:
+            - {label: "Libelé", name: "label", widget: "string"}
+            - {label: "Url (exemple: /contact)", name: "to", widget: "string"}
+  # SERVICES
+  - name: "services" # Used in routes, e.g., /admin/collections/blog
+    title: "Services"
+    identifier_field: "Services"
+    extension: "json"
+    format: "json"
+    label: "Service" # Used in the UI
+    folder: "content/services" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+    - {label: "Titre", name: "title", widget: "string", required: true}
+    - {label: "Sommaire", name: "summary", widget: "string"}
+    - label: "Entête"
+      name: "header"
+      widget: "object"
+      fields: 
+      - {label: "Image", name: "img", widget: "image", required: true}
