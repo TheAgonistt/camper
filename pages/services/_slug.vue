@@ -2,6 +2,7 @@
 	<div v-if="post">
 		<Header :title="post.title" />
 		<HeaderImage :images="header_images" />
+		<Content :intro="post.content.intro" :content="post.content.text" />
 	</div>
 </template>
 

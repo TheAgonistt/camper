@@ -87,3 +87,9 @@ collections:
       widget: "object"
       fields: 
       - {label: "Image", name: "img", widget: "image", required: true}
+    - label: "Contenu"
+      name: "content"
+      widget: "object"
+      fields: 
+      - {label: "Introduction", name: "intro", widget: "text"}
+      - {label: "Contenu", name: "text", widget: "markdown"}

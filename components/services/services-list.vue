@@ -19,14 +19,24 @@
 					</div>
 
 					<div class="c-Services__col__inner">
-						<a class="c-Services__col--content Editable" href="#">
-							<h2 class="TextColor--white">Personnalisation <br>de campeur</h2>
-							<p class="TextColor--white">Odio vitae sit orci feugiat. Elementum magna ut ut convallis sapien suspendisse sed pretium aliquam. Et morbi commodo vestibulum, adipiscing risus tortor est.</p>
+						<nuxt-link
+							:to="service.path"
+							class="c-Services__col--content Editable"
+						>
+							<h2
+								v-html="service.title"
+								class="TextColor--white"
+							></h2>
+							<p
+								v-if="service.summary"
+								v-html="service.summary"
+								class="TextColor--white"
+							></p>
 
 							<span class="c-Services__col--content--link BlockColor--secondary">
 								<Arrow />
 							</span>
-						</a>
+						</nuxt-link>
 					</div>
 				</div>
 			</div>

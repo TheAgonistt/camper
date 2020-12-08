@@ -4,14 +4,13 @@
             <div class="row">
                 <div class="col-12">
                     <div 
-                        v-html="this.intro"
                         v-if="this.intro"
                         class="c-Text--intro Editable"
                     >
+                        <p v-html="this.intro"></p>
                     </div>
 
-                    <div class="c-Text--content Editable" v-html="this.content">
-                    </div>
+                    <nuxt-content class="c-Text--content Editable" :document="this.content" />
                 </div>
             </div>
         </div>
@@ -32,10 +31,7 @@ export default {
 	},
 
 	props: {
-		content: {
-			type: String,
-			default: null,
-		},
+		content: null,
         intro: {
 			type: String,
 			default: null,
