@@ -2,8 +2,7 @@
 	<div id="app">
 		<Header title="Services" />
 		<ServicesList
-			:images1="this.images1"
-			:images2="this.images2"
+			:services="posts"
 		/>
 	</div>
 </template>
@@ -24,26 +23,18 @@ export default {
 		ServicesList
 	},
 
-	data() {
-		return {
-			images1: {
-				mobile: 'https://source.unsplash.com/random/1487x720?camper',
-				desktop: 'https://source.unsplash.com/random/1487x720?camper',
-			},
-			images2: {
-				mobile: 'https://source.unsplash.com/random/1487x720?camper',
-				desktop: 'https://source.unsplash.com/random/1487x720?camper',
-			},
+	async asyncData({ $content, params, error }) {
+		let posts;
+		try {
+			posts = await $content('services').fetch()
+			console.log('posts: ', posts)
+		} catch (e) {
+			error({ message: "Ce services n'existe pas" });
 		}
-	},
 
-	computed: {
+		return {
+			posts,
+		};
 	},
-
-	methods: {
-	},
-
-	created() {
-	}
 }
 </script>

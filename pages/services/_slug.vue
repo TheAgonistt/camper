@@ -1,6 +1,7 @@
 <template>
 	<div v-if="post">
 		<Header :title="post.title" />
+		<HeaderImage :images="header_images" />
 	</div>
 </template>
 
@@ -31,6 +32,10 @@ export default {
 
 		return {
 			post,
+			header_images: {
+				mobile: post.header.img,
+				desktop: post.header.img,
+			}
 		};
 	},
 };

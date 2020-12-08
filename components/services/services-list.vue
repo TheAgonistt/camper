@@ -2,14 +2,18 @@
 	<section class="c-Services BlockColor--primary">
 		<div class="c-Services__container container">
 			<div class="c-Services__row row">
-				<div class="c-Services__col col-12 col-MD-6">
+				<div
+					v-for="service in services"
+					:key="service.createdAt"
+					class="c-Services__col col-12 col-MD-6"
+				>
 					<div class="c-Services__col__media">
 						<div class="c-Services__col--filter"></div>
 						<div class="c-Services__col__media--img">
 							<picture>
-								<source :srcset="this.images1.mobile" media="(max-width: 479px)">
-								<source :srcset="this.images1.desktop" media="(min-width: 480px)">
-								<img :src="this.images1.desktop" alt="">
+								<source :srcset="service.featured_image" media="(max-width: 479px)">
+								<source :srcset="service.featured_image" media="(min-width: 480px)">
+								<img :src="service.featured_image" alt="">
 							</picture>
 						</div>
 					</div>
@@ -18,30 +22,6 @@
 						<a class="c-Services__col--content Editable" href="#">
 							<h2 class="TextColor--white">Personnalisation <br>de campeur</h2>
 							<p class="TextColor--white">Odio vitae sit orci feugiat. Elementum magna ut ut convallis sapien suspendisse sed pretium aliquam. Et morbi commodo vestibulum, adipiscing risus tortor est.</p>
-
-							<span class="c-Services__col--content--link BlockColor--secondary">
-								<Arrow />
-							</span>
-						</a>
-					</div>
-				</div>
-
-				<div class="c-Services__col col-12 col-MD-6">
-					<div class="c-Services__col__media">
-						<div class="c-Services__col--filter"></div>
-						<div class="c-Services__col__media--img">
-							<picture>
-								<source :srcset="this.images1.mobile" media="(max-width: 479px)">
-								<source :srcset="this.images1.desktop" media="(min-width: 480px)">
-								<img :src="this.images1.desktop" alt="">
-							</picture>
-						</div>
-					</div>
-
-					<div class="c-Services__col__inner">
-						<a class="c-Services__col--content Editable" href="#">
-							<h2 class="TextColor--white">Génie <br>conseil</h2>
-							<p class="TextColor--white">Elementum magna ut ut convallis sapien suspendisse sed pretium aliquam. Et morbi commodo vestibulum, adipiscing risus tortor ipsum est. Consectetur adipiscing habitant non sed.</p>
 
 							<span class="c-Services__col--content--link BlockColor--secondary">
 								<Arrow />
@@ -68,14 +48,18 @@ export default {
 	},
 
 	props: {
-		images1: {
-			type: Object,
-			default: null,
-		},
-		images2: {
-			type: Object,
-			default: null,
-		},
+		services: {
+			type: Array,
+			default: [],
+		}
+		// images1: {
+		// 	type: Object,
+		// 	default: null,
+		// },
+		// images2: {
+		// 	type: Object,
+		// 	default: null,
+		// },
 	},
 
 	data() {
