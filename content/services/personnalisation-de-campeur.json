@@ -4,5 +4,9 @@
   "header": {
     "img": "/images/uploads/photo-1537028815117-eb492d02684f.jpg"
   },
-  "featured_image": "/images/uploads/photo-1489893117776-b13fed1ad239.jpg"
+  "featured_image": "/images/uploads/photo-1489893117776-b13fed1ad239.jpg",
+  "content": {
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis orci vel nisi rutrum, sit amet rutrum velit blandit. Nunc non tincidunt lacus, in hendrerit libero. Aenean in venenatis nunc. Nullam ornare congue diam id gravida. Nullam blandit ex orci, sed rutrum lectus imperdiet non.",
+    "content": "## Lorem ipsum dolor sit amet\n\n\nconsectetur adipiscing elit. Nam mollis orci vel nisi rutrum, sit amet rutrum velit blandit. Nunc non tincidunt lacus, in hendrerit libero. Aenean in venenatis nunc. Nullam ornare congue diam id gravida. Nullam blandit ex orci, sed rutrum lectus imperdiet non."
+  }
 }
