@@ -1,0 +1,15 @@
+{
+	"title": "Contact",
+	"summary": "Odio vitae sit orci feugiat. Elementum magna ut ut convallis sapien suspendisse sed pretium aliquam. Et morbi commodo vestibulum, adipiscing risus tortor ipsum est. Consectetur adipiscing habitant non sed.",
+	"header": {
+		"img": "/images/uploads/dog_nose_dry_hero.jpg"
+	},
+	"address": {
+		"civic": "1505",
+		"street": "rue Drummond",
+		"city": "Montréal",
+		"province": "(Québec)",
+		"postal": "H3G 0B7",
+		"phone": "450 502-5155"
+	}
+}

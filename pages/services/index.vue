@@ -27,8 +27,7 @@ export default {
 		let posts;
 		try {
 			posts = await $content('services').fetch()
-			console.log('posts: ', posts)
-		} catch (e) {
+			} catch (e) {
 			error({ message: "Ce services n'existe pas" });
 		}
 

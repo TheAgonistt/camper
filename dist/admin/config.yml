@@ -4,16 +4,17 @@ backend:
 media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 collections:
-  - name: "index" # Used in routes, e.g., /admin/collections/blog
+  # Accueil
+  - name: "index"
     title: "Accueil"
     identifier_field: "Accueil"
     extension: "json"
     format: "json"
-    label: "Accueil" # Used in the UI
-    folder: "content/" # The path to the folder where the documents are stored
-    create: false # Allow users to create new documents in this collection
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    label: "Accueil"
+    folder: "content/"
+    create: false
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
       - label: "Entête"
         name: "header"
         widget: "object"
@@ -68,20 +69,27 @@ collections:
             - {label: "Libelé", name: "label", widget: "string"}
             - {label: "Url (exemple: /contact)", name: "to", widget: "string"}
   # SERVICES
-  - name: "services" # Used in routes, e.g., /admin/collections/blog
+  - name: "services"
     title: "Services"
     identifier_field: "Services"
     extension: "json"
     format: "json"
-    label: "Service" # Used in the UI
-    folder: "content/services" # The path to the folder where the documents are stored
-    create: true # Allow users to create new documents in this collection
-    slug: '{{slug}}' # Filename template, e.g., YYYY-MM-DD-title.md
-    fields: # The fields for each document, usually in front matter
+    label: "Service"
+    folder: "content/services"
+    create: true
+    slug: '{{slug}}'
+    fields:
     - {label: "Titre", name: "title", widget: "string", required: true}
     - {label: "Sommaire", name: "summary", widget: "string"}
+    - {label: "Image vedette", name: "featured_image", widget: "image", required: true}
     - label: "Entête"
       name: "header"
       widget: "object"
       fields: 
       - {label: "Image", name: "img", widget: "image", required: true}
+    - label: "Contenu"
+      name: "content"
+      widget: "object"
+      fields: 
+      - {label: "Introduction", name: "intro", widget: "text"}
+      - {label: "Contenu", name: "text", widget: "markdown"}

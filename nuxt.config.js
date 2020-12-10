@@ -68,11 +68,15 @@ export default {
     '@nuxtjs/dotenv',
     '@nuxtjs/svg',
     '@nuxt/content',
+    '@nuxtjs/markdownit'
     //['nuxt-gmaps', {
       //  key: `${process.env.GMAP_API}`,
       //you can use libraries: ['places']
     //}
   ],
+  content: {
+    // nestedProperties: ['services.slug']
+  },
   styleResources: {
     scss: [
       '~assets/stylesheets/prod/_vars.scss',

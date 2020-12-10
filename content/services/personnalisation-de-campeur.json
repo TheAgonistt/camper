@@ -6,8 +6,7 @@
   },
   "featured_image": "/images/uploads/photo-1489893117776-b13fed1ad239.jpg",
   "content": {
-    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis orci vel nisi rutrum, sit amet rutrum velit blandit. Nunc non tincidunt lacus, in hendrerit libero. Aenean in venenatis nunc. Nullam ornare congue diam id gravida. Nullam blandit ex orci, sed rutrum lectus imperdiet non.",
-    "content": "## Lorem ipsum dolor sit amet\n\n\nconsectetur adipiscing elit. Nam mollis orci vel nisi rutrum, sit amet rutrum velit blandit. Nunc non tincidunt lacus, in hendrerit libero. Aenean in venenatis nunc. Nullam ornare congue diam id gravida. Nullam blandit ex orci, sed rutrum lectus imperdiet non.",
-    "text": "## Aliquam nec ligula eu nunc aliquam\n\nLacinia vitae quis nulla. Curabitur semper, justo id dignissim elementum, mauris massa lacinia erat, et semper neque eros a purus. Nam malesuada ullamcorper massa, quis commodo dolor condimentum nec. Sed commodo, dui non varius hendrerit, eros mi placerat mauris, sit amet egestas ex purus eget mauris. Sed justo erat, eleifend sed fringilla vitae, consequat at risus. Ut tincidunt, enim sed efficitur accumsan, augue sem fermentum eros, vel molestie est sapien aliquam tortor. Aliquam consequat et orci vitae rhoncus. Duis in blandit felis. Ut pulvinar odio vel feugiat lobortis."
-  }
+    "intro": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis orci vel nisi rutrum, sit amet rutrum velit blandit. Nunc non tincidunt lacus, in hendrerit libero. Aenean in venenatis nunc. Nullam ornare congue diam id gravida. Nullam blandit ex orci, sed rutrum lectus imperdiet non."
+  },
+  "body": "## Aliquam nec ligula eu nunc aliquam\n\nLacinia vitae quis nulla. Curabitur semper, justo id dignissim elementum, mauris massa lacinia erat, et semper neque eros a purus. Nam malesuada ullamcorper massa, quis commodo dolor condimentum nec. Sed commodo, dui non varius hendrerit, eros mi placerat mauris, sit amet egestas ex purus eget mauris. Sed justo erat, eleifend sed fringilla vitae, consequat at risus. Ut tincidunt, enim sed efficitur accumsan, augue sem fermentum eros, vel molestie est sapien aliquam tortor. Aliquam consequat et orci vitae rhoncus. Duis in blandit felis. Ut pulvinar odio vel feugiat lobortis."
 }

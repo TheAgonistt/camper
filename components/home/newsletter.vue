@@ -81,7 +81,6 @@ export default {
     },
 
     created() {
-        console.log('newsletter: ', this.data.newsletter);
     },
     
     methods: {

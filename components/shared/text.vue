@@ -10,7 +10,10 @@
                         <p v-html="this.intro"></p>
                     </div>
 
-                    <nuxt-content class="c-Text--content Editable" :document="this.content" />
+                    <nuxt-content
+                        class="c-Text--content Editable"
+                        :document="this.content"
+                    />
                 </div>
             </div>
         </div>
@@ -31,15 +34,20 @@ export default {
 	},
 
 	props: {
-		content: null,
         intro: {
 			type: String,
 			default: null,
-		},
+        },
+        content: {
+            type: Object,
+            default: null,
+        }
 	},
 
 	data() {
-		return {}
+		return {
+            body: this.content.body,
+        }
 	},
 
 	methods: {
@@ -70,7 +78,7 @@ export default {
             }
         }
 
-        &--content {
+        &--content, .nuxt-content-container {
             h2 {
                 margin-top: 1.5em;
                 margin-bottom: 0.5em;

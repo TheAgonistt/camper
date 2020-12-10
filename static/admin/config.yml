@@ -71,7 +71,7 @@ collections:
   # SERVICES
   - name: "services"
     title: "Services"
-    identifier_field: "Services"
+    identifier_field: "services"
     extension: "json"
     format: "json"
     label: "Service"
@@ -82,6 +82,7 @@ collections:
     - {label: "Titre", name: "title", widget: "string", required: true}
     - {label: "Sommaire", name: "summary", widget: "string"}
     - {label: "Image vedette", name: "featured_image", widget: "image", required: true}
+    - {label: "Contenu", name: "body", widget: "markdown"}
     - label: "Entête"
       name: "header"
       widget: "object"
@@ -92,4 +93,30 @@ collections:
       widget: "object"
       fields: 
       - {label: "Introduction", name: "intro", widget: "text"}
-      - {label: "Contenu", name: "text", widget: "markdown"}
+  # contact
+  - name: "contact"
+    title: "Contact"
+    identifier_field: "Contact"
+    extension: "json"
+    format: "json"
+    label: "Contact"
+    folder: "content/contact"
+    create: false
+    slug: '{{slug}}'
+    fields:
+    - {label: "Titre", name: "title", widget: "string", required: true}
+    - {label: "Sommaire", name: "summary", widget: "string"}
+    - label: "Entête"
+      name: "header"
+      widget: "object"
+      fields: 
+      - {label: "Image", name: "img", widget: "image", required: true}
+      # name: "address"
+      # widget: "object"
+      # fields: 
+      # - {label: "Civic", name: "civic", widget: "string"}
+      # - {label: "Rue", name: "street", widget: "string"}
+      # - {label: "Ville", name: "city", widget: "string"}
+      # - {label: "Province", name: "province", widget: "string"}
+      # - {label: "Postal", name: "postal", widget: "string"}
+      # - {label: "Téléphone", name: "phone", widget: "string"}

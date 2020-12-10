@@ -2,7 +2,7 @@
 	<div v-if="post">
 		<Header :title="post.title" />
 		<HeaderImage :images="header_images" />
-		<Content :intro="post.content.intro" :content="post.content.text" />
+		<Content :intro="post.content.intro" :content="post" />
 	</div>
 </template>
 
@@ -26,7 +26,7 @@ export default {
 	async asyncData({ $content, params, error }) {
 		let post;
 		try {
-			post = await $content('services',params.slug).fetch()
+			post = await $content('services', params.slug).fetch()
 		} catch (e) {
 			error({ message: "Ce services n'existe pas" });
 		}
